@@ -4,6 +4,7 @@ import { Route, Link, Switch } from "react-router-dom";
 
 import Home from "./Home";
 import Resources from "./Resources";
+import FunctionalCompnentDemo from "../concepts/FunctionalComponentDemo";
 
 const Sidebar = () => (
   <div className="sidebar">
@@ -21,6 +22,9 @@ const Sidebar = () => (
         <li>
           <Link to="/resources">Resources</Link>
         </li>
+        <li>
+          <Link to="/functionaldemo">Functional Component Demo</Link>
+        </li>
       </ul>
     </div>
     <div className="sidebar-route">
@@ -33,6 +37,9 @@ const Sidebar = () => (
         </Route>
         <Route exact path="/">
           <Home />
+        </Route>
+        <Route exact path="/functionaldemo">
+          <FunctionalCompnentDemo />
         </Route>
       </Switch>
     </div>
