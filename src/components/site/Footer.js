@@ -5,7 +5,12 @@ const Footer = () => {
   return (
     <footer>
       <Row>
-        <p>&copy; Eleven Fifty 2018</p>
+        <p>Created by Scott Stewart</p>
+        <p>
+          Find the code on github to see examples of how you can practice react
+          in the same way!{" "}
+        </p>
+        <p>https://github.com/scottjstewart/new-project-prac</p>
       </Row>
     </footer>
   );
