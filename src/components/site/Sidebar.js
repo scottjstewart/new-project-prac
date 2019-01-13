@@ -6,6 +6,9 @@ import Home from "./Home";
 import Resources from "./Resources";
 import FunctionalComponentDemo from "../concepts/FunctionalComponentDemo";
 import JSXRules from "../concepts/JSXcomponent";
+import ClassComponentDemo from "../ClassComponentDemo";
+import CounterComponentDemo from "../SImpleCounter";
+import PropsDemo from "../concepts/PropsDemo";
 
 const Sidebar = () => (
   <div className="sidebar">
@@ -26,6 +29,15 @@ const Sidebar = () => (
         <li>
           <Link to="/functionaldemo">Functional Component Demo</Link>
         </li>
+        <li>
+          <Link to="/classcomponentdemo">Class Component Demo</Link>
+        </li>
+        <li>
+          <Link to="/countercomponent">Counter Component Demo</Link>
+        </li>
+        <li>
+          <Link to="/propsdemo">Props Demo</Link>
+        </li>
       </ul>
     </div>
     <div className="sidebar-route">
@@ -44,6 +56,15 @@ const Sidebar = () => (
         </Route>
         <Route exact path="/jsxrules">
           <JSXRules />
+        </Route>
+        <Route exact path="/classcomponentdemo">
+          <ClassComponentDemo />
+        </Route>
+        <Route exact path="/countercomponent">
+          <CounterComponentDemo />
+        </Route>
+        <Route exact path="/propsdemo">
+          <PropsDemo />
         </Route>
       </Switch>
     </div>

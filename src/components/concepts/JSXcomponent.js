@@ -19,6 +19,7 @@ const JSXRules = () => {
         </dl>
         <hr />
         <h1>Egghead.io JSX Compiler</h1>
+        <p>Add your JSX here to try out the compiler!</p>
         <JSXCompiler />
       </div>
     </div>
