@@ -38,6 +38,9 @@ const Sidebar = () => (
         <li>
           <Link to="/propsdemo">Props Demo</Link>
         </li>
+        <li>
+          <Link to="/lifecycle">Lifecycle Code Pen</Link>
+        </li>
       </ul>
     </div>
     <div className="sidebar-route">
@@ -65,6 +68,26 @@ const Sidebar = () => (
         </Route>
         <Route exact path="/propsdemo">
           <PropsDemo />
+        </Route>
+        <Route exact path="/lifecycle">
+          <iframe
+            height="265"
+            scrolling="no"
+            title="React components lifecycle diagram"
+            src="//codepen.io/ccharris/embed/wxdKYa/?height=265&theme-id=0&default-tab=html,result"
+            frameBorder="no"
+            allowtransparency="true"
+            allowFullScreen="{true}?"
+            width="100%"
+          >
+            See the Pen{" "}
+            <a href="https://codepen.io/ccharris/pen/wxdKYa/">
+              React components lifecycle diagram
+            </a>{" "}
+            by Carolyn Harris (
+            <a href="https://codepen.io/ccharris">@ccharris</a>) on{" "}
+            <a href="https://codepen.io">CodePen</a>.
+          </iframe>
         </Route>
       </Switch>
     </div>

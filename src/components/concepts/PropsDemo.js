@@ -1,4 +1,12 @@
 import React from "react";
+// import PropTypes from "prop-types";
+
+const propsFromOutside = [
+  { string: "Color Toggle", function: "colorToggle" },
+  { string: "Background Color Toggle", function: "backgroundToggle" },
+  { string: "Border Style Toggle", function: "borderToggle" },
+  { string: "Border Radius Toggle", function: "borderRadToggle" }
+];
 
 export default class PropsDemo extends React.Component {
   constructor() {
@@ -39,39 +47,19 @@ export default class PropsDemo extends React.Component {
   };
 
   render() {
+    const display = propsFromOutside.map((el, index) => {
+      return (
+        <FunctionalComp
+          key={index}
+          string={el.string}
+          function={this[`${el.function}`]}
+        />
+      );
+    });
     return (
       <div className="main">
         <div className="mainDiv">
-          <div style={this.state}>
-            <FunctionalComp
-              string="will this display?"
-              function={this.colorToggle}
-              function2={this.backgroundToggle}
-              function3={this.borderToggle}
-              function4={this.borderRadToggle}
-            />
-            <FunctionalComp
-              string="this is a test string passed through props 2"
-              function={this.colorToggle}
-              function2={this.backgroundToggle}
-              function3={this.borderToggle}
-              function4={this.borderRadToggle}
-            />
-            <FunctionalComp
-              string="this is a test string passed through props 3"
-              function={this.colorToggle}
-              function2={this.backgroundToggle}
-              function3={this.borderToggle}
-              function4={this.borderRadToggle}
-            />
-            <FunctionalComp
-              string="this is a test string passed through props 4"
-              function={this.colorToggle}
-              function2={this.backgroundToggle}
-              function3={this.borderToggle}
-              function4={this.borderRadToggle}
-            />
-          </div>
+          <div style={this.state}>{display}</div>
         </div>
       </div>
     );
@@ -83,10 +71,17 @@ const FunctionalComp = props => {
     <div>
       <h1>Test Strings Passed Through Props</h1>
       <p>{props.string}</p>
-      <button onClick={props.function}>Color Change!</button>
-      <button onClick={props.function2}>Background Color Change!</button>
-      <button onClick={props.function3}>Border Change!</button>
-      <button onClick={props.function4}>Round Border Change!</button>
+      <button onClick={props.function}>Make a Change!</button>
     </div>
   );
 };
+
+// FunctionalComp.defaultProps = {
+//   string: "this is a crazy thingamajigger!",
+//   function: () => console.log("PropTypes are crazy!")
+// };
+
+// FunctionalComp.propTypes = {
+//   string: PropTypes.string.isRequired,
+//   function: PropTypes.func.isRequired
+// };

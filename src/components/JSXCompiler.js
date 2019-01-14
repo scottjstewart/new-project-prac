@@ -10,6 +10,10 @@ class JSXCompiler extends React.Component {
     };
   }
 
+  componentDidMount() {
+    console.log("Component will mount");
+  }
+
   update(e) {
     let code = e.target.value;
     try {
